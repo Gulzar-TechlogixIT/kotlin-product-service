@@ -1,0 +1,35 @@
+server:
+  port: ${PORT:8080}
+
+spring:
+  application:
+    name: kotlin-product-service
+  datasource:
+    url: ${DB_URL:jdbc:postgresql://localhost:5432/productdb}
+    username: ${DB_USERNAME:product_user}
+    password: ${DB_PASSWORD:product_pass}
+    driver-class-name: org.postgresql.Driver
+  jpa:
+    hibernate:
+      ddl-auto: update
+    open-in-view: false
+    properties:
+      hibernate:
+        format_sql: true
+  jackson:
+    default-property-inclusion: non_null
+
+management:
+  endpoints:
+    web:
+      exposure:
+        include: health,info
+  endpoint:
+    health:
+      probes:
+        enabled: true
+
+info:
+  app:
+    name: Kotlin Product Service
+    version: 0.0.1
