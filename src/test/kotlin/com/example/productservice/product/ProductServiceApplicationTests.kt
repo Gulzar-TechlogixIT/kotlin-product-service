@@ -1,4 +1,6 @@
-package com.example.productservice.product
+﻿package com.example.productservice.product
+
+import com.example.productservice.ProductServiceApplication
 
 import org.junit.jupiter.api.Assertions.assertNotNull
 import org.junit.jupiter.api.Test
@@ -19,3 +21,4 @@ class ProductServiceApplicationTests {
         assertNotNull(ProductServiceApplication::class)
     }
 }
+
